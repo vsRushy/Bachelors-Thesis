@@ -41,6 +41,11 @@ public class CarController : MonoBehaviour
         wheel.transform.position = position;
         wheel.transform.rotation = rotation;
     }
+
+    public void SetInputs()
+    {
+
+    }
 }
 
 [System.Serializable]

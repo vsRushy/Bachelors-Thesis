@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4984072662674197012}
   - component: {fileID: 275445349410001797}
   - component: {fileID: 4850076668777467873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 5145005036891160780}
   - component: {fileID: 702178455612342422}
   - component: {fileID: 1281160725820102394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Curve
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
