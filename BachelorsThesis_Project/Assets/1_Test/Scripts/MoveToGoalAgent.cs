@@ -7,7 +7,7 @@ using Unity.MLAgents.Sensors;
 public class MoveToGoalAgent : Agent
 {
     [SerializeField]
-    private Transform target_transform;
+    Transform target_transform;
 
     public override void OnActionReceived(float[] vectorAction)
     {
@@ -36,7 +36,7 @@ public class MoveToGoalAgent : Agent
         actionsOut[1] = Input.GetAxisRaw("Vertical");
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
         {

@@ -27,7 +27,7 @@ public class Checkpoints : MonoBehaviour
     {
         if(checkpoint_list.IndexOf(checkpoint) == next_checkpoint)
         {
-            ++next_checkpoint;
+            next_checkpoint = (next_checkpoint + 1u) % (uint)checkpoint_list.Count;
         }
     }
 }
