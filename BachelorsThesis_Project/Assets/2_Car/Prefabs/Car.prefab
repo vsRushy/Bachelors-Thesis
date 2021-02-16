@@ -733,9 +733,9 @@ GameObject:
   - component: {fileID: 3710797608591416767}
   - component: {fileID: 1433730845212678424}
   - component: {fileID: 8300648016884641919}
-  - component: {fileID: 4262932061080243136}
   - component: {fileID: 6568342056589638932}
   - component: {fileID: 8850834938710866176}
+  - component: {fileID: 7553878564757455495}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -827,22 +827,6 @@ MonoBehaviour:
   m_BehaviorName: Car_AI
   TeamId: 0
   m_UseChildSensors: 1
---- !u!114 &4262932061080243136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967196778467739233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b6042bc9a5d4aa58d931eae49442e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 1200
 --- !u!114 &6568342056589638932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,3 +867,21 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 1
   m_EndVerticalOffset: 1
+--- !u!114 &7553878564757455495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967196778467739233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0900780e5f5cdc7408b0fc5bf530ff17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  car_controller: {fileID: 0}
+  checkpoints: {fileID: 0}
