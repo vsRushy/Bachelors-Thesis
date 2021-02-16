@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(collider.TryGetComponent<CarController>(out CarController car_controller))
         {
-            checkpoints.PassCheckpoint(this);
+            checkpoints.PassCheckpoint(collider.transform, this);
         }
     }
 
