@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class Checkpoints : MonoBehaviour
     
     List<Checkpoint> checkpoint_list;
     List<uint> next_checkpoint_list;
+
+    public event EventHandler on_correct_checkpoint;
+    public event EventHandler on_wrong_checkpoint;
 
     void Awake()
     {
@@ -29,17 +33,37 @@ public class Checkpoints : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        on_correct_checkpoint += OnCorrectCheckpoint;
+        on_wrong_checkpoint += OnWrongCheckpoint;
+    }
+
     public void PassCheckpoint(Transform car, Checkpoint checkpoint)
     {
         uint next_checkpoint = next_checkpoint_list[cars.IndexOf(car)];
         if(checkpoint_list.IndexOf(checkpoint) == next_checkpoint)
         {
             Debug.Log("Correct Checkpoint, car:" + car.gameObject.name);
+
             next_checkpoint_list[cars.IndexOf(car)] = (next_checkpoint + 1u) % (uint)checkpoint_list.Count;
+            on_correct_checkpoint?.Invoke(this, EventArgs.Empty);
         }
         else
         {
             Debug.Log("Incorrect Checkpoint, car:" + car.gameObject.name);
+
+            on_wrong_checkpoint?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    void OnCorrectCheckpoint(object sender, System.EventArgs e)
+    {
+        int i = 0;
+    }
+
+    void OnWrongCheckpoint(object sender, System.EventArgs e)
+    {
+        int i = 0;
     }
 }
