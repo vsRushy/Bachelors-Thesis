@@ -42,7 +42,7 @@ public class CarController : MonoBehaviour
         wheel.transform.rotation = rotation;
     }
 
-    public void SetInputs()
+    public void SetInputs(float forward_amount, float turn_amount)
     {
 
     }

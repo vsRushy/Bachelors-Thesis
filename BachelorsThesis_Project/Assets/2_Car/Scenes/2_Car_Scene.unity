@@ -10192,6 +10192,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7553878564757455495, guid: ac9e938a762f0b14c82f66407ad6e05a,
+        type: 3}
+      propertyPath: MaxStep
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553878564757455495, guid: ac9e938a762f0b14c82f66407ad6e05a,
+        type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553878564757455495, guid: ac9e938a762f0b14c82f66407ad6e05a,
+        type: 3}
+      propertyPath: car_controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8850834938710866176, guid: ac9e938a762f0b14c82f66407ad6e05a,
         type: 3}
       propertyPath: m_MaxRayDegrees

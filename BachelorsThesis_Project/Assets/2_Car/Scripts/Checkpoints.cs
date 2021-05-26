@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
+    public class CheckpointEventArgs : EventArgs
+    {
+        public static readonly CheckpointEventArgs CorrectCheckpoint;
+        public static readonly CheckpointEventArgs WrongCheckpoint;
+
+        public Transform car_transform;
+    }
+
     public Transform checkpoints;
     public List<Transform> cars;
     
@@ -50,10 +58,4 @@ public class Checkpoints : MonoBehaviour
             OnWrongCheckpointEvent?.Invoke(this, CheckpointEventArgs.WrongCheckpoint);
         }
     }
-}
-
-public class CheckpointEventArgs : EventArgs
-{
-    public static readonly CheckpointEventArgs CorrectCheckpoint;
-    public static readonly CheckpointEventArgs WrongCheckpoint;
 }
