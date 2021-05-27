@@ -8,6 +8,13 @@ public class CarController : MonoBehaviour
     public float max_motor_torque;
     public float max_steering_angle;
 
+    private Rigidbody rigidbody;
+
+    void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
     void FixedUpdate()
     {
         float motor = Input.GetAxisRaw("Vertical") * max_motor_torque;
@@ -45,6 +52,11 @@ public class CarController : MonoBehaviour
     public void SetInputs(float forward_amount, float turn_amount)
     {
 
+    }
+
+    public void Stop()
+    {
+        rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
 }
 
