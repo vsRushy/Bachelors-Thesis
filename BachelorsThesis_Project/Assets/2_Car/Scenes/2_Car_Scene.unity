@@ -7076,7 +7076,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1216626942}
-  - component: {fileID: 1216626943}
   m_Layer: 0
   m_Name: Track
   m_TagString: Untagged
@@ -7100,22 +7099,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1216626943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216626941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e0a984cdb21964bada555c09518613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpoints: {fileID: 1802287861}
-  cars:
-  - {fileID: 454845617}
-  - {fileID: 0}
 --- !u!1001 &1242293266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10201,11 +10184,21 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1802287862}
     - target: {fileID: 7553878564757455495, guid: ac9e938a762f0b14c82f66407ad6e05a,
         type: 3}
       propertyPath: car_controller
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553878564757455495, guid: ac9e938a762f0b14c82f66407ad6e05a,
+        type: 3}
+      propertyPath: spawn_position
+      value: 
+      objectReference: {fileID: 1834375515}
+    - target: {fileID: 8300648016884641919, guid: ac9e938a762f0b14c82f66407ad6e05a,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8850834938710866176, guid: ac9e938a762f0b14c82f66407ad6e05a,
         type: 3}
@@ -10767,6 +10760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802287861}
+  - component: {fileID: 1802287862}
   m_Layer: 0
   m_Name: Checkpoints
   m_TagString: Untagged
@@ -10862,6 +10856,22 @@ Transform:
   m_Father: {fileID: 1216626942}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1802287862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802287860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e0a984cdb21964bada555c09518613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoints: {fileID: 1802287861}
+  cars:
+  - {fileID: 454845617}
+  - {fileID: 0}
 --- !u!1001 &1826585207
 PrefabInstance:
   m_ObjectHideFlags: 0
