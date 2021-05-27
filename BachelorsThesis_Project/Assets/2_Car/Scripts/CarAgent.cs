@@ -50,7 +50,7 @@ public class CarAgent : Agent
     {
         transform.position = spawn_position.position + new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 5.0f));
         transform.forward = spawn_position.forward;
-        //checkpoints.ResetCheckpoint(transform);
+        checkpoints.ResetCheckpoint(transform);
         //car_controller.Stop();
     }
 

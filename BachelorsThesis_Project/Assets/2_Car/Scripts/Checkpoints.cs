@@ -17,7 +17,7 @@ public class Checkpoints : MonoBehaviour
     public List<Transform> cars;
     
     List<Checkpoint> checkpoint_list;
-    List<uint> next_checkpoint_list;
+    List<int> next_checkpoint_list;
 
     public event EventHandler<CheckpointEventArgs> OnCorrectCheckpointEvent;
     public event EventHandler<CheckpointEventArgs> OnWrongCheckpointEvent;
@@ -25,7 +25,7 @@ public class Checkpoints : MonoBehaviour
     void Awake()
     {
         checkpoint_list = new List<Checkpoint>();
-        next_checkpoint_list = new List<uint>();
+        next_checkpoint_list = new List<int>();
 
         foreach (Transform car in cars)
         {
@@ -43,12 +43,12 @@ public class Checkpoints : MonoBehaviour
 
     public void PassCheckpoint(Transform car, Checkpoint checkpoint)
     {
-        uint next_checkpoint = next_checkpoint_list[cars.IndexOf(car)];
+        int next_checkpoint = next_checkpoint_list[cars.IndexOf(car)];
         if(checkpoint_list.IndexOf(checkpoint) == next_checkpoint)
         {
             Debug.Log("Correct Checkpoint, car:" + car.gameObject.name);
 
-            next_checkpoint_list[cars.IndexOf(car)] = (next_checkpoint + 1u) % (uint)checkpoint_list.Count;
+            next_checkpoint_list[cars.IndexOf(car)] = (next_checkpoint + 1) % checkpoint_list.Count;
             OnCorrectCheckpointEvent?.Invoke(this, CheckpointEventArgs.CorrectCheckpoint);
         }
         else
@@ -57,5 +57,10 @@ public class Checkpoints : MonoBehaviour
 
             OnWrongCheckpointEvent?.Invoke(this, CheckpointEventArgs.WrongCheckpoint);
         }
+    }
+
+    public void ResetCheckpoint(Transform car)
+    {
+        next_checkpoint_list[cars.IndexOf(car)] = 0;
     }
 }
