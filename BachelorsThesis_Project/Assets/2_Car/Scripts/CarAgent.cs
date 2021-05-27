@@ -56,9 +56,9 @@ public class CarAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        //Vector3 checkpoint_forward = checkpoints.GetNextCheckpoint(transform).transform.forward;
-        //float direction_dot = Vector3.Dot(transform.forward, checkpoint_forward);
-        //sensor.AddObservation(direction_dot);
+        Vector3 checkpoint_forward = checkpoints.GetNextCheckpoint(transform).transform.forward;
+        float direction_dot = Vector3.Dot(transform.forward, checkpoint_forward);
+        sensor.AddObservation(direction_dot);
     }
 
     public override void OnActionReceived(float[] vectorAction)
