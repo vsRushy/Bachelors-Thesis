@@ -2,17 +2,17 @@
     "MoveToGoal": {
         "checkpoints": [
             {
-                "steps": 17792,
-                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-17792.onnx",
-                "reward": null,
-                "creation_time": 1612095125.3839552
+                "steps": 467278,
+                "file_path": "results\\ppo\\MoveToGoal\\MoveToGoal-467278.onnx",
+                "reward": 0.9846491228070176,
+                "creation_time": 1622499637.3685865
             }
         ],
         "final_checkpoint": {
-            "steps": 17792,
+            "steps": 467278,
             "file_path": "results\\ppo\\MoveToGoal.onnx",
-            "reward": null,
-            "creation_time": 1612095125.3839552
+            "reward": 0.9846491228070176,
+            "creation_time": 1622499637.3685865
         }
     },
     "metadata": {

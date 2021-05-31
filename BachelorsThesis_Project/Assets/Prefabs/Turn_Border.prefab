@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4984072662674197012}
   - component: {fileID: 275445349410001797}
   - component: {fileID: 4850076668777467873}
+  - component: {fileID: 8397491292738286157}
   m_Layer: 8
   m_Name: Cube.001
   m_TagString: Wall
@@ -95,6 +96,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
   m_Center: {x: -0.07, y: 0.069999985, z: 0.014999996}
+--- !u!114 &8397491292738286157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205980957455462788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e4d64d42e46764b899b0feaa88cbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5090802819654542517
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +120,7 @@ GameObject:
   - component: {fileID: 5145005036891160780}
   - component: {fileID: 702178455612342422}
   - component: {fileID: 1281160725820102394}
+  - component: {fileID: 7498681527043652733}
   m_Layer: 8
   m_Name: Curve
   m_TagString: Wall
@@ -191,6 +205,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8168585829983048746, guid: a14883879b65bf4458233600e2d2f72c, type: 3}
+--- !u!114 &7498681527043652733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090802819654542517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e4d64d42e46764b899b0feaa88cbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7198600760560567280
 GameObject:
   m_ObjectHideFlags: 0
