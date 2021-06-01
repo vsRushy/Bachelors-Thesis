@@ -20,9 +20,6 @@ public class CarController : MonoBehaviour
 
     void FixedUpdate()
     {
-        forward_amount = Input.GetAxisRaw("Vertical") * max_motor_torque;
-        turn_amount = Input.GetAxisRaw("Horizontal") * max_steering_angle;
-
         foreach(Axle axle in axles)
         {
             if(axle.is_motor)
@@ -52,10 +49,10 @@ public class CarController : MonoBehaviour
         wheel.transform.rotation = rotation;
     }
 
-    public void SetInputs(float forward_amount, float turn_amount)
+    public void SetInputs(float fa, float ta)
     {
-        this.forward_amount = forward_amount * max_motor_torque;
-        this.turn_amount = turn_amount * max_steering_angle;
+        forward_amount = fa * max_motor_torque;
+        turn_amount = ta * max_steering_angle;
     }
 
     public void Stop()

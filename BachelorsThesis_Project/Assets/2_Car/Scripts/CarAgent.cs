@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
 public class CarAgent : Agent
@@ -61,12 +62,12 @@ public class CarAgent : Agent
         sensor.AddObservation(direction_dot);
     }
 
-    public override void OnActionReceived(float[] vectorAction)
+    public override void OnActionReceived(ActionBuffers actions)
     {
         float forward_amount = 0.0f;
         float turn_amount = 0.0f;
 
-        switch(vectorAction[0])
+        switch(actions.DiscreteActions[0])
         {
             case 0: forward_amount = 0.0f; break;
             case 1: forward_amount = 1.0f; break;
@@ -75,7 +76,7 @@ public class CarAgent : Agent
             default: break;
         }
 
-        switch (vectorAction[1])
+        switch (actions.DiscreteActions[1])
         {
             case 0: turn_amount = 0.0f; break;
             case 1: turn_amount = 1.0f; break;
@@ -87,7 +88,7 @@ public class CarAgent : Agent
         car_controller.SetInputs(forward_amount, turn_amount);
     }
 
-    public override void Heuristic(float[] actionsOut)
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
         int forward_action = 0;
         if (Input.GetKey(KeyCode.UpArrow)) forward_action = 1;
@@ -97,7 +98,8 @@ public class CarAgent : Agent
         if (Input.GetKey(KeyCode.RightArrow)) turn_action = 1;
         if (Input.GetKey(KeyCode.LeftArrow)) turn_action = 2;
 
-        float[] discrete_actions = actionsOut;
+        ActionSegment<int> discrete_actions = actionsOut.DiscreteActions;
+
         discrete_actions[0] = forward_action;
         discrete_actions[1] = turn_action;
     }

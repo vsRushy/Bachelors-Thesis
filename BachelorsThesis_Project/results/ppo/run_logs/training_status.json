@@ -1,20 +1,4 @@
 {
-    "Car_AI": {
-        "checkpoints": [
-            {
-                "steps": 182560,
-                "file_path": "results\\ppo\\Car_AI\\Car_AI-182560.onnx",
-                "reward": null,
-                "creation_time": 1622580311.1149614
-            }
-        ],
-        "final_checkpoint": {
-            "steps": 182560,
-            "file_path": "results\\ppo\\Car_AI.onnx",
-            "reward": null,
-            "creation_time": 1622580311.1149614
-        }
-    },
     "metadata": {
         "stats_format_version": "0.2.0",
         "mlagents_version": "0.23.0",
