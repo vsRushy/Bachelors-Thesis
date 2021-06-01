@@ -48,7 +48,7 @@ public class CarAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.position = spawn_position.position + new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 5.0f));
+        transform.position = spawn_position.position + new Vector3(Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f));
         transform.forward = spawn_position.forward;
         checkpoints.ResetCheckpoint(transform);
         car_controller.Stop();

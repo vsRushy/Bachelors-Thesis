@@ -54,8 +54,8 @@ public class CarController : MonoBehaviour
 
     public void SetInputs(float forward_amount, float turn_amount)
     {
-        this.forward_amount = forward_amount;
-        this.turn_amount = turn_amount;
+        this.forward_amount = forward_amount * max_motor_torque;
+        this.turn_amount = turn_amount * max_steering_angle;
     }
 
     public void Stop()
