@@ -7,15 +7,15 @@ public class CarController : MonoBehaviour
     public List<Axle> axles;
     public float max_motor_torque;
     public float max_steering_angle;
-
-    private Rigidbody rigidbody;
+    
+    private Rigidbody rb;
 
     private float forward_amount;
     private float turn_amount;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -60,7 +60,7 @@ public class CarController : MonoBehaviour
 
     public void Stop()
     {
-        rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
 }
 
