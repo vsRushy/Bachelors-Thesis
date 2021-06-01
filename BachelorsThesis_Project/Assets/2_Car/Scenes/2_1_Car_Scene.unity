@@ -10791,7 +10791,6 @@ MonoBehaviour:
   checkpoints: {fileID: 1802287861}
   cars:
   - {fileID: 454845617}
-  - {fileID: 0}
 --- !u!1001 &1826585207
 PrefabInstance:
   m_ObjectHideFlags: 0
