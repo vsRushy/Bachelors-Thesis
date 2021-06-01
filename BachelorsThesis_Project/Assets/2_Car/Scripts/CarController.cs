@@ -24,14 +24,14 @@ public class CarController : MonoBehaviour
         {
             if(axle.is_motor)
             {
-                axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque;
-                axle.right_wheel_collider.motorTorque = forward_amount * max_steering_angle;
+                axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque * Time.deltaTime;
+                axle.right_wheel_collider.motorTorque = forward_amount * max_motor_torque * Time.deltaTime;
             }
 
             if(axle.is_steering)
             {
-                axle.left_wheel_collider.steerAngle = turn_amount;
-                axle.right_wheel_collider.steerAngle = turn_amount;
+                axle.left_wheel_collider.steerAngle = turn_amount * max_steering_angle;
+                axle.right_wheel_collider.steerAngle = turn_amount * max_steering_angle;
             }
 
             UpdateWheelTransform(axle.left_wheel, axle.left_wheel_collider);
