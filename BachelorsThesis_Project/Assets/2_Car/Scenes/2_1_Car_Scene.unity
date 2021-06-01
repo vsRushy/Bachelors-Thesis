@@ -10076,6 +10076,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1433730845212678424, guid: ac9e938a762f0b14c82f66407ad6e05a,
+        type: 3}
+      propertyPath: max_motor_torque
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 5877885527827748138, guid: ac9e938a762f0b14c82f66407ad6e05a,
         type: 3}
       propertyPath: m_RootOrder
@@ -10144,7 +10149,7 @@ PrefabInstance:
     - target: {fileID: 8300648016884641919, guid: ac9e938a762f0b14c82f66407ad6e05a,
         type: 3}
       propertyPath: m_BehaviorType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8967196778467739233, guid: ac9e938a762f0b14c82f66407ad6e05a,
         type: 3}

@@ -7,11 +7,15 @@ public class Checkpoints : MonoBehaviour
 {
     public class CheckpointEventArgs : EventArgs
     {
-        public static readonly CheckpointEventArgs CorrectCheckpoint;
-        public static readonly CheckpointEventArgs WrongCheckpoint;
-
         public Transform car_transform;
+
+        public CheckpointEventArgs(Transform transform)
+        {
+            car_transform = transform;
+        }
     }
+
+    public delegate void CheckpointSystemHandler(object sender, CheckpointEventArgs e);
 
     public Transform checkpoints;
     public List<Transform> cars;
@@ -19,8 +23,8 @@ public class Checkpoints : MonoBehaviour
     List<Checkpoint> checkpoint_list;
     List<int> next_checkpoint_list;
 
-    public event EventHandler<CheckpointEventArgs> OnCorrectCheckpointEvent;
-    public event EventHandler<CheckpointEventArgs> OnWrongCheckpointEvent;
+    public event CheckpointSystemHandler OnCorrectCheckpointEvent;
+    public event CheckpointSystemHandler OnWrongCheckpointEvent;
 
     void Awake()
     {
@@ -49,13 +53,13 @@ public class Checkpoints : MonoBehaviour
             Debug.Log("Correct Checkpoint, car:" + car.gameObject.name);
 
             next_checkpoint_list[cars.IndexOf(car)] = (next_checkpoint + 1) % checkpoint_list.Count;
-            OnCorrectCheckpointEvent?.Invoke(this, CheckpointEventArgs.CorrectCheckpoint);
+            OnCorrectCheckpointEvent?.Invoke(this, new CheckpointEventArgs(car));
         }
         else
         {
             Debug.Log("Incorrect Checkpoint, car:" + car.gameObject.name);
 
-            OnWrongCheckpointEvent?.Invoke(this, CheckpointEventArgs.WrongCheckpoint);
+            OnWrongCheckpointEvent?.Invoke(this, new CheckpointEventArgs(car));
         }
     }
 
