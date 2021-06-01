@@ -24,8 +24,8 @@ public class CarController : MonoBehaviour
         {
             if(axle.is_motor)
             {
-                axle.left_wheel_collider.motorTorque = forward_amount;
-                axle.right_wheel_collider.motorTorque = forward_amount;
+                axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque;
+                axle.right_wheel_collider.motorTorque = forward_amount * max_steering_angle;
             }
 
             if(axle.is_steering)
@@ -51,8 +51,8 @@ public class CarController : MonoBehaviour
 
     public void SetInputs(float fa, float ta)
     {
-        forward_amount = fa * max_motor_torque;
-        turn_amount = ta * max_steering_angle;
+        forward_amount = fa;
+        turn_amount = ta;
     }
 
     public void Stop()
