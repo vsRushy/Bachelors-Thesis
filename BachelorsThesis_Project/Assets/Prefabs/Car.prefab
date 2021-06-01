@@ -887,7 +887,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1200
+  MaxStep: 5000
   checkpoints: {fileID: 0}
   spawn_position: {fileID: 0}
 --- !u!65 &1540896116
