@@ -6,13 +6,25 @@
                 "file_path": "results\\Phase2-test01\\CheckpointDriving\\CheckpointDriving-158786.onnx",
                 "reward": null,
                 "creation_time": 1622672830.2720726
+            },
+            {
+                "steps": 499954,
+                "file_path": "results\\Phase2-test01\\CheckpointDriving\\CheckpointDriving-499954.onnx",
+                "reward": null,
+                "creation_time": 1622673286.628054
+            },
+            {
+                "steps": 553514,
+                "file_path": "results\\Phase2-test01\\CheckpointDriving\\CheckpointDriving-553514.onnx",
+                "reward": null,
+                "creation_time": 1622673345.7635422
             }
         ],
         "final_checkpoint": {
-            "steps": 158786,
+            "steps": 553514,
             "file_path": "results\\Phase2-test01\\CheckpointDriving.onnx",
             "reward": null,
-            "creation_time": 1622672830.2720726
+            "creation_time": 1622673345.7635422
         }
     },
     "metadata": {
