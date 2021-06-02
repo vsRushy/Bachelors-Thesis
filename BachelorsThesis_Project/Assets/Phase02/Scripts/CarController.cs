@@ -24,8 +24,8 @@ public class CarController : MonoBehaviour
         {
             if(axle.is_motor)
             {
-                axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque * Time.deltaTime;
-                axle.right_wheel_collider.motorTorque = forward_amount * max_motor_torque * Time.deltaTime;
+                axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque;
+                axle.right_wheel_collider.motorTorque = forward_amount * max_motor_torque;
             }
 
             if(axle.is_steering)
