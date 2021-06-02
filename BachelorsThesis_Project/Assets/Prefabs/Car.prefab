@@ -798,8 +798,8 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
-  m_BehaviorName: Car_AI
+  m_BehaviorType: 0
+  m_BehaviorName: CheckpointDriving
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -888,7 +888,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 1400
   checkpoints: {fileID: 0}
   spawn_position: {fileID: 0}
 --- !u!65 &1540896116
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Record: 1
+  Record: 0
   NumStepsToRecord: 0
-  DemonstrationName: CheckpointRightDrive
+  DemonstrationName: CrightDrive
   DemonstrationDirectory: TrainingRecordings

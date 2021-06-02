@@ -109,6 +109,7 @@ public class CarAgent : Agent
         if(collision.gameObject.TryGetComponent<Wall>(out Wall wall))
         {
             AddReward(-0.5f);
+            EndEpisode();
         }
     }
 
