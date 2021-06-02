@@ -70,6 +70,6 @@ public class Checkpoints : MonoBehaviour
 
     public Checkpoint GetNextCheckpoint(Transform car)
     {
-        return checkpoint_list[(cars.IndexOf(car) + 1) % checkpoint_list.Count];
+        return checkpoint_list[next_checkpoint_list[cars.IndexOf(car)]];
     }
 }
