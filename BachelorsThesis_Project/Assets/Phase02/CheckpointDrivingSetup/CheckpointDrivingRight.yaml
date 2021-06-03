@@ -17,13 +17,13 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 0.1
+        strength: 0.5
       gail:
         strength: 1.0
-        demo_path: Assets/Phase02/CheckpointRightDrivingDemos/CRightDrive.demo
+        demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
     behavioral_cloning:
       strength: 1.0
-      demo_path: Assets/Phase02/CheckpointRightDrivingDemos/CRightDrive.demo
+      demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
     max_steps: 5000000
     time_horizon: 64
     summary_freq: 100000
