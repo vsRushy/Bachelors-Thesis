@@ -920,5 +920,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Record: 0
   NumStepsToRecord: 0
-  DemonstrationName: CRightDrive
+  DemonstrationName: CLeftDrive
   DemonstrationDirectory: TrainingRecordings
