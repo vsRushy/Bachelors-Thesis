@@ -1,5 +1,5 @@
 behaviors:
-  CheckpointDrivingRight:
+  CheckpointDriving:
     trainer_type: ppo
     hyperparameters:
       batch_size: 256
@@ -20,10 +20,10 @@ behaviors:
         strength: 0.1
       gail:
         strength: 1.0
-        demo_path: Assets/Phase02/CheckpointDrivingDemos/
+        demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
     behavioral_cloning:
       strength: 1.0
-      demo_path: Assets/Phase02/CheckpointDrivingDemos/
+      demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
     max_steps: 5000000
     time_horizon: 64
     summary_freq: 100000

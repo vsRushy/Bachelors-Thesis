@@ -1,42 +1,18 @@
 {
-    "CheckpointDrivingRight": {
+    "CheckpointDriving": {
         "checkpoints": [
             {
-                "steps": 184381,
-                "file_path": "results\\Phase2-test01\\CheckpointDrivingRight\\CheckpointDrivingRight-184381.onnx",
+                "steps": 42139,
+                "file_path": "results\\Phase2-test02\\CheckpointDriving\\CheckpointDriving-42139.onnx",
                 "reward": null,
-                "creation_time": 1622716553.4170957
-            },
-            {
-                "steps": 343331,
-                "file_path": "results\\Phase2-test01\\CheckpointDrivingRight\\CheckpointDrivingRight-343331.onnx",
-                "reward": null,
-                "creation_time": 1622716733.7064216
-            },
-            {
-                "steps": 499979,
-                "file_path": "results\\Phase2-test01\\CheckpointDrivingRight\\CheckpointDrivingRight-499979.onnx",
-                "reward": null,
-                "creation_time": 1622716964.7822442
-            },
-            {
-                "steps": 999995,
-                "file_path": "results\\Phase2-test01\\CheckpointDrivingRight\\CheckpointDrivingRight-999995.onnx",
-                "reward": null,
-                "creation_time": 1622717448.0600748
-            },
-            {
-                "steps": 1472635,
-                "file_path": "results\\Phase2-test01\\CheckpointDrivingRight\\CheckpointDrivingRight-1472635.onnx",
-                "reward": -29.654549320990387,
-                "creation_time": 1622717907.4028301
+                "creation_time": 1622719957.0210607
             }
         ],
         "final_checkpoint": {
-            "steps": 1472635,
-            "file_path": "results\\Phase2-test01\\CheckpointDrivingRight.onnx",
-            "reward": -29.654549320990387,
-            "creation_time": 1622717907.4028301
+            "steps": 42139,
+            "file_path": "results\\Phase2-test02\\CheckpointDriving.onnx",
+            "reward": null,
+            "creation_time": 1622719957.0210607
         }
     },
     "metadata": {
@@ -44,33 +20,5 @@
         "mlagents_version": "0.23.0",
         "torch_version": "1.7.0+cu110",
         "tensorflow_version": "2.4.0"
-    },
-    "CheckpointDrivingLeft": {
-        "checkpoints": [
-            {
-                "steps": 0,
-                "file_path": "results\\Phase2-test02\\CheckpointDrivingLeft\\CheckpointDrivingLeft-0.onnx",
-                "reward": null,
-                "creation_time": 1622719217.4575822
-            },
-            {
-                "steps": 0,
-                "file_path": "results\\Phase2-test02\\CheckpointDrivingLeft\\CheckpointDrivingLeft-0.onnx",
-                "reward": null,
-                "creation_time": 1622719314.880476
-            },
-            {
-                "steps": 43344,
-                "file_path": "results\\Phase2-test02\\CheckpointDrivingLeft\\CheckpointDrivingLeft-43344.onnx",
-                "reward": null,
-                "creation_time": 1622719457.9521527
-            }
-        ],
-        "final_checkpoint": {
-            "steps": 43344,
-            "file_path": "results\\Phase2-test02\\CheckpointDrivingLeft.onnx",
-            "reward": null,
-            "creation_time": 1622719457.9521527
-        }
     }
 }

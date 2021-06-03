@@ -1,6 +1,6 @@
 default_settings: null
 behaviors:
-  CheckpointDrivingLeft:
+  CheckpointDriving:
     trainer_type: ppo
     hyperparameters:
       batch_size: 256
@@ -28,7 +28,7 @@ behaviors:
         learning_rate: 0.0003
         use_actions: false
         use_vail: false
-        demo_path: Assets/Phase02/CheckpointDrivingDemos/CleftDrive.demo
+        demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
@@ -38,7 +38,7 @@ behaviors:
     threaded: true
     self_play: null
     behavioral_cloning:
-      demo_path: Assets/Phase02/CheckpointDrivingDemos/CleftDrive.demo
+      demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
       steps: 0
       strength: 1.0
       samples_per_update: 0
@@ -64,7 +64,7 @@ checkpoint_settings:
   run_id: Phase2-test02
   initialize_from: null
   load_model: false
-  resume: true
+  resume: false
   force: false
   train_model: false
   inference: false
