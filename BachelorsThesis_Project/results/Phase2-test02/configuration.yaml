@@ -28,7 +28,7 @@ behaviors:
         learning_rate: 0.0003
         use_actions: false
         use_vail: false
-        demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
+        demo_path: Assets/Phase02/CheckpointDrivingDemos/CLeftDrive.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
@@ -38,7 +38,7 @@ behaviors:
     threaded: true
     self_play: null
     behavioral_cloning:
-      demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
+      demo_path: Assets/Phase02/CheckpointDrivingDemos/CLeftDrive.demo
       steps: 0
       strength: 1.0
       samples_per_update: 0
