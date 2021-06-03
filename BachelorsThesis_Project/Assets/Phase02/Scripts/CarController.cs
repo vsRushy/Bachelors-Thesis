@@ -7,8 +7,12 @@ public class CarController : MonoBehaviour
     public List<Axle> axles;
     public float max_motor_torque;
     public float max_steering_angle;
-    
+    public float max_braque_torque;
+    public float max_speed;
+
     private Rigidbody rb;
+
+    private float current_speed;
 
     private float forward_amount;
     private float turn_amount;
@@ -16,18 +20,39 @@ public class CarController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        current_speed = 0.0f;
     }
 
     void FixedUpdate()
     {
+        current_speed = rb.velocity.sqrMagnitude;
+
         foreach(Axle axle in axles)
         {
             if(axle.is_motor)
             {
-                axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque;
-                axle.right_wheel_collider.motorTorque = forward_amount * max_motor_torque;
-            }
+                if (forward_amount < 0.0f)
+                {
+                    rb.drag = 1;
+                }
+                else
+                {
+                    rb.drag = 0;
+                }
 
+                if (current_speed < max_speed)
+                {
+                    axle.left_wheel_collider.motorTorque = forward_amount * max_motor_torque;
+                    axle.right_wheel_collider.motorTorque = forward_amount * max_motor_torque;
+                }
+                else
+                {
+                    axle.left_wheel_collider.motorTorque = 0.0f;
+                    axle.right_wheel_collider.motorTorque = 0.0f;
+                }
+            }
+            
             if(axle.is_steering)
             {
                 axle.left_wheel_collider.steerAngle = turn_amount * max_steering_angle;

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 538541896951945870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 8649852301926729670}
   - {fileID: 5392411850898941834}
@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 3780636419976942249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 5919112512348945046}
   - {fileID: 2133995836175538426}
@@ -298,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 3969986861501667656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 5877885527827748138}
   m_RootOrder: 0
@@ -829,8 +829,10 @@ MonoBehaviour:
     right_wheel_collider: {fileID: 3981939107177429575}
     is_motor: 1
     is_steering: 0
-  max_motor_torque: 700
-  max_steering_angle: 30
+  max_motor_torque: 625
+  max_steering_angle: 40
+  max_braque_torque: 500
+  max_speed: 150
 --- !u!114 &6568342056589638932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,8 +904,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.25, y: 1.25, z: 5}
-  m_Center: {x: 0, y: 0.75, z: 0.04}
+  m_Size: {x: 1.5692327, y: 0.84343064, z: 3.6525908}
+  m_Center: {x: -0.009455204, y: 0.5467153, z: 0.06597304}
 --- !u!114 &6561143508275631624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,5 +920,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Record: 0
   NumStepsToRecord: 0
-  DemonstrationName: CLeftDrive
+  DemonstrationName: CRightDrive
   DemonstrationDirectory: TrainingRecordings

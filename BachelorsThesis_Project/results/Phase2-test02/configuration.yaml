@@ -20,7 +20,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 0.5
+        strength: 0.2
       gail:
         gamma: 0.99
         strength: 1.0
@@ -28,17 +28,17 @@ behaviors:
         learning_rate: 0.0003
         use_actions: false
         use_vail: false
-        demo_path: Assets/Phase02/CheckpointDrivingDemos/CLeftDrive.demo
+        demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 5000000
+    max_steps: 10000000
     time_horizon: 64
     summary_freq: 100000
     threaded: true
     self_play: null
     behavioral_cloning:
-      demo_path: Assets/Phase02/CheckpointDrivingDemos/CLeftDrive.demo
+      demo_path: Assets/Phase02/CheckpointDrivingDemos/CRightDrive.demo
       steps: 0
       strength: 1.0
       samples_per_update: 0
