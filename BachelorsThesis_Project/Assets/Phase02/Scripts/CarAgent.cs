@@ -28,7 +28,11 @@ public class CarAgent : Agent
 
     void Update()
     {
-        
+        Vector3 dir_to_target = (checkpoints.GetNextCheckpoint(transform).transform.position - transform.position).normalized;
+        float velocity_alignment = Vector3.Dot(dir_to_target, car_controller.GetComponent<Rigidbody>().velocity);
+
+        AddReward(1.0f * velocity_alignment * MaxStep);
+        AddReward(car_controller.GetComponent<Rigidbody>().velocity.magnitude * 0.001f);
     }
 
     private void OnCorrectCheckpoint(object sender, Checkpoints.CheckpointEventArgs e)
@@ -108,7 +112,7 @@ public class CarAgent : Agent
         if(collision.gameObject.TryGetComponent<Wall>(out Wall wall))
         {
             AddReward(-0.5f);
-            EndEpisode();
+            //EndEpisode();
         }
     }
 
@@ -116,7 +120,7 @@ public class CarAgent : Agent
     {
         if(collision.gameObject.TryGetComponent<Wall>(out Wall wall))
         {
-            AddReward(-0.1f);
+            AddReward(-0.05f);
         }
     }
 }

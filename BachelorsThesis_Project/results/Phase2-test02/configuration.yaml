@@ -4,7 +4,7 @@ behaviors:
     trainer_type: ppo
     hyperparameters:
       batch_size: 256
-      buffer_size: 1024
+      buffer_size: 10240
       learning_rate: 0.0003
       beta: 0.0005
       epsilon: 0.2
@@ -20,7 +20,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 0.1
+        strength: 0.5
       gail:
         gamma: 0.99
         strength: 1.0
@@ -64,7 +64,7 @@ checkpoint_settings:
   run_id: Phase2-test02
   initialize_from: null
   load_model: false
-  resume: false
+  resume: true
   force: false
   train_model: false
   inference: false

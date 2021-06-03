@@ -798,7 +798,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: CheckpointDriving
   TeamId: 0
   m_UseChildSensors: 1
@@ -888,7 +888,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1800
+  MaxStep: 2200
   checkpoints: {fileID: 0}
   spawn_position: {fileID: 0}
 --- !u!65 &1540896116
@@ -918,5 +918,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Record: 0
   NumStepsToRecord: 0
-  DemonstrationName: CrightDrive
+  DemonstrationName: CRightDrive
   DemonstrationDirectory: TrainingRecordings
