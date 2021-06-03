@@ -1,6 +1,6 @@
 default_settings: null
 behaviors:
-  CheckpointDriving:
+  CheckpointDrivingRight:
     trainer_type: ppo
     hyperparameters:
       batch_size: 256

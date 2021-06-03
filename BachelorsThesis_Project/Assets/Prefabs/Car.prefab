@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: CheckpointDriving
+  m_BehaviorName: CheckpointDrivingRight
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -829,7 +829,7 @@ MonoBehaviour:
     right_wheel_collider: {fileID: 3981939107177429575}
     is_motor: 1
     is_steering: 0
-  max_motor_torque: 750
+  max_motor_torque: 700
   max_steering_angle: 30
 --- !u!114 &6568342056589638932
 MonoBehaviour:
@@ -888,7 +888,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1400
+  MaxStep: 1800
   checkpoints: {fileID: 0}
   spawn_position: {fileID: 0}
 --- !u!65 &1540896116
