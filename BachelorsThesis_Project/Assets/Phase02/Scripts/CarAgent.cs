@@ -54,7 +54,6 @@ public class CarAgent : Agent
         checkpoints.ResetCheckpoint(transform);
         car_controller.Stop();
     }
-
     public override void CollectObservations(VectorSensor sensor)
     {
         Vector3 checkpoint_forward = checkpoints.GetNextCheckpoint(transform).transform.forward;
