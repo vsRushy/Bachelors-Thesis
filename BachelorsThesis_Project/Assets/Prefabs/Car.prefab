@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: CheckpointDrivingRight
+  m_BehaviorName: CheckpointDrivingLeft
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Record: 0
+  Record: 1
   NumStepsToRecord: 0
-  DemonstrationName: CrightDrive
+  DemonstrationName: CleftDrive
   DemonstrationDirectory: TrainingRecordings
