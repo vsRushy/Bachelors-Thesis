@@ -830,9 +830,9 @@ MonoBehaviour:
     is_motor: 1
     is_steering: 0
   max_motor_torque: 625
-  max_steering_angle: 40
+  max_steering_angle: 50
   max_braque_torque: 500
-  max_speed: 150
+  max_speed: 125
 --- !u!114 &6568342056589638932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +890,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2200
+  MaxStep: 10000
   checkpoints: {fileID: 0}
   spawn_position: {fileID: 0}
 --- !u!65 &1540896116
@@ -920,5 +920,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Record: 0
   NumStepsToRecord: 0
-  DemonstrationName: CLeftDrive
+  DemonstrationName: CAnyDrive
   DemonstrationDirectory: TrainingRecordings
