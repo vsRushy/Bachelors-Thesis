@@ -10,9 +10,6 @@ public class P3CarAgent : Agent
     private P3CarController car_controller;
 
     [SerializeField]
-    private Checkpoints checkpoints;
-
-    [SerializeField]
     private Transform spawn_position;
 
     void Awake()
@@ -22,47 +19,24 @@ public class P3CarAgent : Agent
 
     void Start()
     {
-        checkpoints.OnCorrectCheckpointEvent += OnCorrectCheckpoint;
-        checkpoints.OnWrongCheckpointEvent += OnWrongCheckpoint;
+
     }
 
     void Update()
     {
-        Vector3 dir_to_target = (checkpoints.GetNextCheckpoint(transform).transform.position - transform.position).normalized;
-        float velocity_alignment = Vector3.Dot(dir_to_target, car_controller.GetComponent<Rigidbody>().velocity);
 
-        AddReward(1.0f * velocity_alignment * (1.0f / MaxStep));
-        AddReward(car_controller.GetComponent<Rigidbody>().velocity.magnitude * 0.01f);
     }
 
-    private void OnCorrectCheckpoint(object sender, Checkpoints.CheckpointEventArgs e)
-    {
-        if (e.car_transform == transform)
-        {
-            AddReward(1.0f);
-        }
-    }
-
-    private void OnWrongCheckpoint(object sender, Checkpoints.CheckpointEventArgs e)
-    {
-        if(e.car_transform == transform)
-        {
-            AddReward(-1.0f);
-        }
-    }
 
     public override void OnEpisodeBegin()
     {
         transform.position = spawn_position.position + new Vector3(Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f));
         transform.forward = spawn_position.forward;
-        checkpoints.ResetCheckpoint(transform);
         car_controller.Stop();
     }
     public override void CollectObservations(VectorSensor sensor)
     {
-        Vector3 checkpoint_forward = checkpoints.GetNextCheckpoint(transform).transform.forward;
-        float direction_dot = Vector3.Dot(transform.forward, checkpoint_forward);
-        sensor.AddObservation(direction_dot);
+
     }
 
     public override void OnActionReceived(ActionBuffers actions)
