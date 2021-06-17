@@ -27,7 +27,6 @@ public class P3CarAgent : Agent
 
     }
 
-
     public override void OnEpisodeBegin()
     {
         transform.position = spawn_position.position + new Vector3(Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f));

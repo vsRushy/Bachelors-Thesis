@@ -1,5 +1,5 @@
 behaviors:
-  CheckpointDriving:
+  P3CheckpointDriving:
     trainer_type: sac
     hyperparameters:
       batch_size: 256
@@ -18,12 +18,6 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 0.5
-      gail:
-        strength: 0.5
-        demo_path: Assets/Phase02/CheckpointDrivingDemos/
-    behavioral_cloning:
-      strength: 0.5
-      demo_path: Assets/Phase02/CheckpointDrivingDemos/
     max_steps: 15000000
     time_horizon: 64
     summary_freq: 100000
