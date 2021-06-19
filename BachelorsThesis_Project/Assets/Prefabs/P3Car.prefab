@@ -733,7 +733,6 @@ GameObject:
   - component: {fileID: 8850834938710866176}
   - component: {fileID: 7383984721078097232}
   - component: {fileID: 1540896116}
-  - component: {fileID: 6561143508275631624}
   m_Layer: 10
   m_Name: P3Car
   m_TagString: Car
@@ -787,7 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
+    VectorObservationSize: 7
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -799,7 +798,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: P3CheckpointDriving
+  m_BehaviorName: P3Driving
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -878,8 +877,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 10000
-  checkpoints: {fileID: 0}
+  MaxStep: 2000
   spawn_position: {fileID: 0}
 --- !u!65 &1540896116
 BoxCollider:
@@ -894,19 +892,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5692327, y: 0.84343064, z: 3.6525908}
   m_Center: {x: -0.009455204, y: 0.5467153, z: 0.06597304}
---- !u!114 &6561143508275631624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967196778467739233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Record: 0
-  NumStepsToRecord: 0
-  DemonstrationName: CAnyDrive
-  DemonstrationDirectory: TrainingRecordings

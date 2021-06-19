@@ -8,6 +8,7 @@ using Unity.MLAgents.Sensors;
 public class P3CarAgent : Agent
 {
     private P3CarController car_controller;
+    private RayPerceptionSensorComponent3D sensor;
 
     [SerializeField]
     private Transform spawn_position;
@@ -19,12 +20,12 @@ public class P3CarAgent : Agent
 
     void Start()
     {
-
+        
     }
 
     void Update()
     {
-
+        AddReward(car_controller.GetLocalVelocity().magnitude * 0.1f);
     }
 
     public override void OnEpisodeBegin()
@@ -33,9 +34,12 @@ public class P3CarAgent : Agent
         transform.forward = spawn_position.forward;
         car_controller.Stop();
     }
+
     public override void CollectObservations(VectorSensor sensor)
     {
-
+        sensor.AddObservation(car_controller.GetTurnAmount());
+        sensor.AddObservation(car_controller.GetLocalVelocity());
+        sensor.AddObservation(car_controller.GetLocalAngularVelocity());
     }
 
     public override void OnActionReceived(ActionBuffers actions)

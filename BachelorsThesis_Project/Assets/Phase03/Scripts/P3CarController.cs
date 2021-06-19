@@ -84,6 +84,26 @@ public class P3CarController : MonoBehaviour
     {
         rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
+
+    public float GetForwardAmount()
+    {
+        return forward_amount;
+    }
+
+    public float GetTurnAmount()
+    {
+        return turn_amount;
+    }
+
+    public Vector3 GetLocalVelocity()
+    {
+        return transform.InverseTransformVector(rb.velocity);
+    }
+
+    public Vector3 GetLocalAngularVelocity()
+    {
+        return transform.InverseTransformVector(rb.angularVelocity);
+    }
 }
 
 [System.Serializable]
