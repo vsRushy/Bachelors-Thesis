@@ -8,7 +8,6 @@ using Unity.MLAgents.Sensors;
 public class P3CarAgent : Agent
 {
     private P3CarController car_controller;
-    private RayPerceptionSensorComponent3D sensor;
 
     [SerializeField]
     private Transform spawn_position;
