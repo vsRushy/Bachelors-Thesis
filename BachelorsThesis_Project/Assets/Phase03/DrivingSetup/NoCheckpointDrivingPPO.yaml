@@ -1,5 +1,5 @@
 behaviors:
-  P3Driving:
+  NoCheckpointDriving:
     trainer_type: ppo
     hyperparameters:
       batch_size: 256
@@ -18,6 +18,6 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
-    max_steps: 15000000
+    max_steps: 30000000
     time_horizon: 64
     summary_freq: 100000
