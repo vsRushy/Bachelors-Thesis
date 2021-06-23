@@ -846,17 +846,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SensorName: Wall_Checkpoint_Sensor
+  m_SensorName: Wall_SpeedZone_Sensor
   m_DetectableTags:
   - Wall
-  - Checkpoint
+  - SpeedZone
   m_RaysPerDirection: 4
   m_MaxRayDegrees: 75
   m_SphereCastRadius: 0.5
   m_RayLength: 35
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 2304
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
