@@ -90,6 +90,11 @@ public class P3CarAgent : Agent
             AddReward(-0.5f);
             //EndEpisode();
         }
+
+        if (collision.gameObject.TryGetComponent<SpeedZone>(out SpeedZone speed_zone))
+        {
+            AddReward(0.2f);
+        }
     }
 
     void OnCollisionStay(Collision collision)
