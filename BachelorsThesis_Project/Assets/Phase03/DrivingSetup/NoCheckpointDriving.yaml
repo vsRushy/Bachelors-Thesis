@@ -1,5 +1,5 @@
 behaviors:
-  P3Driving:
+  NoCheckpointDriving:
     trainer_type: sac
 
     # Trainer configs common to PPO/SAC (excluding reward signals)

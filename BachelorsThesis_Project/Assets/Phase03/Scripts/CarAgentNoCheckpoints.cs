@@ -88,7 +88,7 @@ public class CarAgentNoCheckpoints : Agent
         if(collision.gameObject.TryGetComponent<Wall>(out Wall wall))
         {
             AddReward(-0.5f);
-            //EndEpisode();
+            EndEpisode();
         }
 
         if(collision.gameObject.TryGetComponent<SpeedZone>(out SpeedZone speed_zone))

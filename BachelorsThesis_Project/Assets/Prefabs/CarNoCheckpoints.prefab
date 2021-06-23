@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: NoCheckpointsDriving
+  m_BehaviorName: NoCheckpointDriving
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -861,7 +861,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2400
+  MaxStep: 25000
   spawn_position: {fileID: 0}
 --- !u!114 &-707367963203929720
 MonoBehaviour:
