@@ -5,26 +5,26 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-public class P3CarAgent : Agent
+public class CarAgentNoCheckpoints : Agent
 {
-    private P3CarController car_controller;
+    private CarControllerNoCheckpoints car_controller;
 
     [SerializeField]
     private Transform spawn_position;
 
     void Awake()
     {
-        car_controller = GetComponent<P3CarController>();
+        car_controller = GetComponent<CarControllerNoCheckpoints>();
     }
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        AddReward(car_controller.GetLocalVelocity().magnitude * 0.1f);
+        AddReward(car_controller.GetLocalVelocity.z * 0.01f);
     }
 
     public override void OnEpisodeBegin()
@@ -36,9 +36,9 @@ public class P3CarAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(car_controller.GetTurnAmount());
-        sensor.AddObservation(car_controller.GetLocalVelocity());
-        sensor.AddObservation(car_controller.GetLocalAngularVelocity());
+        sensor.AddObservation(car_controller.GetSteer);
+        sensor.AddObservation(car_controller.GetLocalVelocity);
+        sensor.AddObservation(car_controller.GetLocalAngularVelocity);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -91,9 +91,9 @@ public class P3CarAgent : Agent
             //EndEpisode();
         }
 
-        if (collision.gameObject.TryGetComponent<SpeedZone>(out SpeedZone speed_zone))
+        if(collision.gameObject.TryGetComponent<SpeedZone>(out SpeedZone speed_zone))
         {
-            AddReward(0.2f);
+            AddReward(0.25f);
         }
     }
 

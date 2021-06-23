@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P3CarController : MonoBehaviour
+public class CarControllerNoCheckpoints : MonoBehaviour
 {
     public List<Axle> axles;
     public float max_motor_torque;
@@ -85,29 +85,15 @@ public class P3CarController : MonoBehaviour
         rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
-    public float GetForwardAmount()
-    {
-        return forward_amount;
-    }
+    public float GetSteer => turn_amount;
 
-    public float GetTurnAmount()
-    {
-        return turn_amount;
-    }
+    public Vector3 GetLocalVelocity => transform.InverseTransformVector(rb.velocity);
 
-    public Vector3 GetLocalVelocity()
-    {
-        return transform.InverseTransformVector(rb.velocity);
-    }
-
-    public Vector3 GetLocalAngularVelocity()
-    {
-        return transform.InverseTransformVector(rb.angularVelocity);
-    }
+    public Vector3 GetLocalAngularVelocity => transform.InverseTransformVector(rb.angularVelocity);
 }
 
 [System.Serializable]
-public class P3Axle
+public class AxleNoCheckpoints
 {
     public GameObject left_wheel;
     public GameObject right_wheel;

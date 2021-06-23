@@ -727,14 +727,15 @@ GameObject:
   m_Component:
   - component: {fileID: 5877885527827748138}
   - component: {fileID: 3710797608591416767}
-  - component: {fileID: 8300648016884641919}
-  - component: {fileID: 5296745106371678038}
-  - component: {fileID: 6568342056589638932}
-  - component: {fileID: 8850834938710866176}
-  - component: {fileID: 7383984721078097232}
   - component: {fileID: 1540896116}
+  - component: {fileID: 3815904284769499305}
+  - component: {fileID: 4728827096038166722}
+  - component: {fileID: 869450008328729309}
+  - component: {fileID: -707367963203929720}
+  - component: {fileID: 7115802254397175815}
+  - component: {fileID: -356233132669935311}
   m_Layer: 10
-  m_Name: P3Car
+  m_Name: CarNoCheckpoints
   m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +774,49 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8300648016884641919
+--- !u!65 &1540896116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967196778467739233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5692327, y: 0.84343064, z: 3.6525908}
+  m_Center: {x: -0.009455204, y: 0.5467153, z: 0.06597304}
+--- !u!114 &3815904284769499305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967196778467739233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a96ac9f59211f44f9de5ee044601281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axles:
+  - left_wheel: {fileID: 7659508870790195526}
+    right_wheel: {fileID: 4199755127146934345}
+    left_wheel_collider: {fileID: 2259804978371733574}
+    right_wheel_collider: {fileID: 3162102441063746075}
+    is_motor: 0
+    is_steering: 1
+  - left_wheel: {fileID: 6546709702855897371}
+    right_wheel: {fileID: 1054249078159295982}
+    left_wheel_collider: {fileID: 6082318284484207578}
+    right_wheel_collider: {fileID: 3981939107177429575}
+    is_motor: 1
+    is_steering: 0
+  max_motor_torque: 625
+  max_steering_angle: 50
+  max_braque_torque: 500
+  max_speed: 125
+--- !u!114 &4728827096038166722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -798,12 +841,12 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: P3Driving
+  m_BehaviorName: NoCheckpointsDriving
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
---- !u!114 &5296745106371678038
+--- !u!114 &869450008328729309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -812,15 +855,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8967196778467739233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936903d63cf519c45a3795c56ed784f4, type: 3}
+  m_Script: {fileID: 11500000, guid: ff6e97f141d55854786c10ac6f364bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axles: []
-  max_motor_torque: 625
-  max_steering_angle: 50
-  max_braque_torque: 500
-  max_speed: 125
---- !u!114 &6568342056589638932
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 2400
+  spawn_position: {fileID: 0}
+--- !u!114 &-707367963203929720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -834,7 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 1
   TakeActionsBetweenDecisions: 1
---- !u!114 &8850834938710866176
+--- !u!114 &7115802254397175815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -846,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SensorName: Wall_SpeedZone_Sensor
+  m_SensorName: RayPerceptionSensor
   m_DetectableTags:
   - Wall
   - SpeedZone
@@ -856,13 +899,13 @@ MonoBehaviour:
   m_RayLength: 35
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 256
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 1
   m_EndVerticalOffset: 1
---- !u!114 &7383984721078097232
+--- !u!114 &-356233132669935311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -871,24 +914,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8967196778467739233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 488fabd508edfa64e9324bc97e948aba, type: 3}
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 15000
-  spawn_position: {fileID: 0}
---- !u!65 &1540896116
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967196778467739233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5692327, y: 0.84343064, z: 3.6525908}
-  m_Center: {x: -0.009455204, y: 0.5467153, z: 0.06597304}
+  Record: 0
+  NumStepsToRecord: 0
+  DemonstrationName: None
+  DemonstrationDirectory: None
