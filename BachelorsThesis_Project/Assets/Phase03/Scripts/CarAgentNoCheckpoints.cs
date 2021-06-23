@@ -38,7 +38,7 @@ public class CarAgentNoCheckpoints : Agent
             Debug.DrawRay(ray_position_offset, transform.TransformDirection(Vector3.right) * hit_right.distance, Color.yellow);
         }
 
-        float hit_difference = hit_left.distance - hit_right.distance;
+        float hit_difference = Mathf.Abs(hit_left.distance - hit_right.distance);
         AddReward(0.05f / hit_difference);
 
         AddReward(car_controller.GetLocalVelocity.z * 0.01f);
