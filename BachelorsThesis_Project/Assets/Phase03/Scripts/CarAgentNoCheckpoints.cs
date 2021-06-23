@@ -24,6 +24,23 @@ public class CarAgentNoCheckpoints : Agent
 
     void Update()
     {
+        Vector3 ray_position_offset = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+
+        RaycastHit hit_left;
+        if (Physics.Raycast(ray_position_offset, transform.TransformDirection(Vector3.left), out hit_left, Mathf.Infinity, LayerMask.GetMask("Wall")))
+        {
+            Debug.DrawRay(ray_position_offset, transform.TransformDirection(Vector3.left) * hit_left.distance, Color.yellow);
+        }
+
+        RaycastHit hit_right;
+        if (Physics.Raycast(ray_position_offset, transform.TransformDirection(Vector3.right), out hit_right, Mathf.Infinity, LayerMask.GetMask("Wall")))
+        {
+            Debug.DrawRay(ray_position_offset, transform.TransformDirection(Vector3.right) * hit_right.distance, Color.yellow);
+        }
+
+        float hit_difference = hit_left.distance - hit_right.distance;
+        AddReward(0.05f / hit_difference);
+
         AddReward(car_controller.GetLocalVelocity.z * 0.01f);
     }
 
