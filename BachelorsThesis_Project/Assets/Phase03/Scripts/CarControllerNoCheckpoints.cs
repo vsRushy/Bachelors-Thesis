@@ -85,6 +85,11 @@ public class CarControllerNoCheckpoints : MonoBehaviour
         rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
+    public void Boost()
+    {
+        rb.AddForce(transform.forward * 2500.0f, ForceMode.Impulse);
+    }
+
     public float GetSteer => turn_amount;
 
     public Vector3 GetLocalVelocity => transform.InverseTransformVector(rb.velocity);

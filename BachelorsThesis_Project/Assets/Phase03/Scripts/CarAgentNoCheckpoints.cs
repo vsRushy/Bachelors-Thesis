@@ -111,11 +111,6 @@ public class CarAgentNoCheckpoints : Agent
             AddReward(-0.5f);
             EndEpisode();
         }
-
-        if(collision.gameObject.TryGetComponent<SpeedZone>(out SpeedZone speed_zone))
-        {
-            AddReward(0.25f);
-        }
     }
 
     void OnCollisionStay(Collision collision)
@@ -123,6 +118,15 @@ public class CarAgentNoCheckpoints : Agent
         if(collision.gameObject.TryGetComponent<Wall>(out Wall wall))
         {
             AddReward(-0.1f);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<SpeedZone>(out SpeedZone speed_zone))
+        {
+            car_controller.Boost();
+            AddReward(0.25f);
         }
     }
 }
