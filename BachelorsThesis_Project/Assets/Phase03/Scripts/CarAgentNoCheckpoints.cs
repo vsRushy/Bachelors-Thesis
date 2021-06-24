@@ -38,14 +38,14 @@ public class CarAgentNoCheckpoints : Agent
             Debug.DrawRay(ray_position_offset, transform.TransformDirection(Vector3.right) * hit_right.distance, Color.yellow);
         }
 
-        AddReward(-hit_left.distance * 0.01f);
-        AddReward(-hit_right.distance * 0.01f);
+        AddReward(-hit_left.distance * 0.05f);
+        AddReward(-hit_right.distance * 0.05f);
 
         float hit_difference = Mathf.Abs(hit_left.distance - hit_right.distance);
         if(hit_difference >= 0.25f)
             AddReward(0.1f / hit_difference);
 
-        AddReward(car_controller.GetLocalVelocity.z * 0.05f);
+        AddReward(car_controller.GetLocalVelocity.z * 0.5f);
     }
 
     public override void OnEpisodeBegin()
